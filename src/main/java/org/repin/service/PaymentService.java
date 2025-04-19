@@ -84,7 +84,7 @@ public class PaymentService {
     private boolean isWorkingDay(LocalDate date){
         int dayOfWeek = date.getDayOfWeek().getValue();
 
-        MonthDay monthDay = MonthDay.of(date.getMonth(), dayOfWeek);
+        MonthDay monthDay = MonthDay.of(date.getMonth(), date.getDayOfMonth());
 
         return !(dayOfWeek == 6 || dayOfWeek == 7)
                 && !HOLIDAYS.contains(monthDay);
